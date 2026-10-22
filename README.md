@@ -45,7 +45,7 @@ coverageThreshold: {
 
 ## Linting
 
-Linting is done using [opinionated-eslint-config](https://github.com/joachimvh/opinionated-eslint-config).
+Linting is done using [opinionated-eslint-config](https://github.com/jvherweg/opinionated-eslint-config).
 See the documentation there if you want to make changes.
 
 Besides that, there is also markdown linting which is defined by the settings in `.markdownlint-cli2.cjs`.
