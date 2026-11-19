@@ -1,5 +1,6 @@
 'use strict';
 
+// eslint-disable-next-line import/extensions
 const options = require('../.markdownlint-cli2.cjs');
 
 module.exports = {

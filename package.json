@@ -1,4 +1,5 @@
 {
+  "name": "$PACKAGE_NAME",
   "version": "0.0.1",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -17,9 +18,6 @@
     "config",
     "dist"
   ],
-  "engines": {
-    "node": ">=18.14"
-  },
   "scripts": {
     "build": "npm run build:ts && npm run build:components",
     "build:components": "componentsjs-generator -s src -c dist/components -i .componentsignore",
@@ -34,20 +32,20 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.2.1",
-    "@commitlint/config-conventional": "^21.2.0",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
     "@swc/jest": "^0.2.39",
-    "@tsconfig/node20": "^20.1.4",
+    "@tsconfig/node20": "^20.1.11",
     "@types/jest": "^30.0.0",
-    "commit-and-tag-version": "^13.0.0",
+    "commit-and-tag-version": "^13.3.0",
     "componentsjs-generator": "^4.3.0",
     "husky": "^4.3.8",
-    "jest": "^30.4.2",
-    "markdownlint-cli2": "^0.23.3",
-    "opinionated-eslint-config": "^0.1.0",
-    "simple-git": "^3.36.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "jest": "^30.5.2",
+    "markdownlint-cli2": "^0.24.1",
+    "opinionated-eslint-config": "^0.2.0",
+    "simple-git": "^4.1.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3"
   },
   "husky": {
     "hooks": {
@@ -57,7 +55,7 @@
   },
   "commit-and-tag-version": {
     "scripts": {
-      "postbump": "ts-node ./scripts/upgradeConfig.ts",
+      "postbump": "tsx ./scripts/upgradeConfig.ts",
       "postchangelog": "markdownlint-cli2 --fix"
     },
     "writerOpts": {

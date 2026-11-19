@@ -1,12 +1,12 @@
-#!/usr/bin/env ts-node
+#!/usr/bin/env tsx
 /* eslint-disable no-console */
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import simpleGit from 'simple-git';
+import { simpleGit } from 'simple-git';
 
 /**
  * Script: upgradeConfigs.ts
- * Run with: ts-node scripts/upgradeConfig.ts
+ * Run with: tsx scripts/upgradeConfig.ts
  * ------------------------------------------
  * Upgrades the lsd:module references in package.json
  * and all JSON-LD config files.
@@ -100,7 +100,7 @@ async function upgradeConfig(): Promise<void> {
   }
   await replaceComponentVersion('package.json', regex, `${major}.0.0`);
 
-  // eslint-disable-next-line ts/naming-convention
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   await simpleGit().commit(`chore(release): Update configs to v${major}.0.0`, configs, { '--no-verify': null });
 }
 
